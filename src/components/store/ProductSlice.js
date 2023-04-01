@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialProductState = { showShopCart: false, items: [], quantity: 0 };
+const initialProductState = {
+    items: [],
+    quantity: 0
+  };
 
 const ProductSlice = createSlice({
   name: "cart",
   initialState: initialProductState,
   reducers: {
-    shopCart(state) {
-      state.showShopCart = !state.showShopCart;
-    },
+    
     addCartItem(state, action) {
         const newItem = action.payload;
         const existingItem = state.items.find((item) => item.id === newItem.id);
